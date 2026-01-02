@@ -1,0 +1,47 @@
+id: org.dfworkshop.DaggerfallUnity
+runtime: org.freedesktop.Platform
+runtime-version: "23.08"
+sdk: org.freedesktop.Sdk
+command: daggerfallunity
+
+finish-args:
+  - --device=dri
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --filesystem=xdg-data/DaggerfallUnity
+  - --persist=.config/unity3d
+
+modules:
+  - name: daggerfallunity
+    buildsystem: simple
+
+    sources:
+      - type: archive
+        url: https://github.com/Interkarma/daggerfall-unity/releases/download/v1.1.1/dfu_linux_64bit-v1.1.1.zip
+        sha256: be3c476ae92972f42448757719266ad82c04868eb7b6f3a3c90fcfcf1490849a
+
+      - type: file
+        path: dfu_icon.png
+
+      - type: file
+        path: org.dfworkshop.DaggerfallUnity.desktop
+
+    build-commands:
+      - mkdir -p /app/lib/daggerfallunity
+      - unzip dfu_linux_64bit-v1.1.1.zip -d /app/lib/daggerfallunity
+      - chmod +x /app/lib/daggerfallunity/DaggerfallUnity.x86_64
+
+      - |
+        install -Dm755 /dev/stdin /app/bin/daggerfallunity << 'EOF'
+        #!/bin/sh
+        exec /app/lib/daggerfallunity/DaggerfallUnity.x86_64 \
+          --assets="$XDG_DATA_HOME/DaggerfallUnity"
+        EOF
+
+      - install -Dm644 dfu_icon.png \
+          /app/share/icons/hicolor/256x256/apps/org.dfworkshop.DaggerfallUnity.png
+
+      - install -Dm644 org.dfworkshop.DaggerfallUnity.desktop \
+          /app/share/applications/org.dfworkshop.DaggerfallUnity.desktop
+

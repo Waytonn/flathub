@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.dfworkshop.DaggerfallUnity</id>
+
+  <name>Daggerfall Unity</name>
+  <summary>Open-source recreation of The Elder Scrolls II: Daggerfall</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="org.dfworkshop">
+    <name>Daggerfall Unity Team</name>
+  </developer>
+
+  <description>
+    <p>
+      Daggerfall Unity is a free and open-source recreation of The Elder Scrolls II: Daggerfall,
+      built with the Unity engine. It aims to faithfully reproduce the original game while fixing
+      bugs, improving performance, and enabling extensive modding support.
+    </p>
+    <p>
+      This package does not include the original Daggerfall game assets.
+      Users must supply their own legally obtained Daggerfall game data
+      (the Arena2 folder) in order to play.
+    </p>
+  </description>
+
+  <categories>
+    <category>Game</category>
+    <category>RolePlaying</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <url type="homepage">https://www.dfworkshop.net</url>
+  <url type="bugtracker">https://github.com/Interkarma/daggerfall-unity/issues</url>
+  <url type="vcs-browser">https://github.com/Interkarma/daggerfall-unity</url>
+
+  <launchable type="desktop-id">
+    org.dfworkshop.DaggerfallUnity.desktop
+  </launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/waytonn/flathub/new-pr/org.dfworkshop.DaggerfallUnity/screenshots/shot1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/waytonn/flathub/new-pr/org.dfworkshop.DaggerfallUnity/screenshots/shot2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/waytonn/flathub/new-pr/org.dfworkshop.DaggerfallUnity/screenshots/shot3.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.1.1" date="2023-10-07"/>
+  </releases>
+</component>
+
